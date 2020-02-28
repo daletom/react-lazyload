@@ -44,7 +44,9 @@ const LazyLoadImage = ({
   }, [isVisible, onVisibilityChange]);
 
 	return (
+		<div height='600px' ref={rootRef}>
 		<Imgix ref={rootRef} src={isVisible ? src : placeholderSrc} {...otherProps} sizes="(min-width: 1240px) 30vw, 90vw" alt="text" />
+		</div>
 	);
 };
 

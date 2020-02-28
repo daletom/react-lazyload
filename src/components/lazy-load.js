@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Imgix from 'react-imgix';
 
 const ONE_PX_PNG =
 	'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
@@ -43,7 +44,7 @@ const LazyLoadImage = ({
   }, [isVisible, onVisibilityChange]);
 
 	return (
-		<img ref={rootRef} src={isVisible ? src : placeholderSrc} {...otherProps} alt="text" />
+		<Imgix ref={rootRef} src={isVisible ? src : placeholderSrc} {...otherProps} sizes="(min-width: 1240px) 30vw, 90vw" alt="text" />
 	);
 };
 
